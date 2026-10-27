@@ -82,18 +82,7 @@ This project implements supply chain attack protection using Bun's built-in secu
 
 ### Security Scanner
 
-Bun supports configurable [security scanners](https://bun.sh/docs/runtime/bunfig#install-security-scanner) that scan packages for vulnerabilities before installation. This project uses [@socketsecurity/bun-security-scanner](https://github.com/SocketDev/bun-security-scanner) by default:
-
-```toml
-[install.security]
-scanner = "@socketsecurity/bun-security-scanner"
-```
-
-You can replace this with any compatible security scanner of your choice. When a security scanner is configured:
-- Auto-install is automatically disabled for security
-- Packages are scanned before installation
-- Installation is cancelled if fatal issues are found
-- Security warnings are displayed during installation
+Bun supports configurable [security scanners](https://bun.sh/docs/runtime/bunfig#install-security-scanner) that scan packages for vulnerabilities before installation. This project deliberately does **not** configure one. Dependabot runs installs behind a proxy that blocks hosts outside its allowlist, so a scanner such as [@socketsecurity/bun-security-scanner](https://github.com/SocketDev/bun-security-scanner) gets a 403 from its API and Bun aborts the install, failing every Dependabot update.
 
 ### Minimum Release Age
 

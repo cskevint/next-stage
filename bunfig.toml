@@ -25,5 +25,5 @@ minimumReleaseAgeExcludes = [
   "react-hook-form",
 ]
 
-[install.security]
-scanner = "@socketsecurity/bun-security-scanner"
+# No [install.security] scanner: Dependabot's network proxy blocks scanner APIs
+# (e.g. firewall-api.socket.dev), and a scanner that can't connect fails the install.
