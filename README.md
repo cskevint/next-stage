@@ -41,6 +41,17 @@ cp .env.example .env.local
 
 2. Update the environment variables in `.env.local` as needed.
 
+### Agent Skills Setup（Recommended）
+If you use an AI coding agent (Claude Code, Cursor, Codex, Windsurf, Gemini CLI, etc.), install the project's default skills:
+
+```bash
+bun run skills
+```
+
+This installs the skills listed in [Agent Skills](#agent-skills) into `.agents/skills/` and links them for the agents it detects on your machine (e.g. `.claude/skills/`). Installed skills are gitignored, so each developer runs this once after cloning, and again whenever the list changes. Restart your agent afterward so it picks them up.
+
+The same command also updates skills: each run reinstalls every listed skill at its latest version, so run `bun run skills` again whenever you want to pick up updates.
+
 ### Development
 
 Run the development server:
@@ -156,7 +167,7 @@ bun run test:e2e:ui
 # Run e2e codegen
 bun run test:codegen
 
-# Install Vercel Agent Skills (React Best Practices)
+# Install the default agent skills
 bun run skills
 ```
 
@@ -259,13 +270,22 @@ For complete documentation and advanced usage, visit:
 - [Next.js DevTools MCP on npm](https://www.npmjs.com/package/next-devtools-mcp)
 - [Next.js MCP Documentation](https://nextjs.org/docs/app/guides/mcp)
 
-### Vercel Agent Skills（React Best Practices）
+### Agent Skills
 
-This project provides a script to install Vercel’s “React Best Practices” as **Agent Skills** for AI coding agents.
+`bun run skills` installs a fixed set of [Agent Skills](https://skills.sh/) chosen for this stack, so every developer's agent works from the same guidance:
 
-- Command: `bun run skills`
-- Runs: `bunx add-skill vercel-labs/agent-skills`
-- Reference: [Introducing: React Best Practices](https://vercel.com/blog/introducing-react-best-practices)
+| Skill | Source | Purpose |
+|---|---|---|
+| `vercel-react-best-practices` | `vercel-labs/agent-skills` | React/Next.js performance rules from Vercel |
+| `web-design-guidelines` | `vercel-labs/agent-skills` | Accessibility and UX review checklist |
+| `shadcn` | `shadcn-ui/ui` | Official shadcn/ui usage and CLI |
+| `frontend-design` | `anthropics/skills` | Distinctive UI instead of generic AI-looking design |
+| `playwright-cli` | `microsoft/playwright-cli` | Drive a browser to check changes |
+| `hono` | `honojs/skills` | Official Hono APIs, routing and middleware |
+| `verification-before-completion` | `obra/superpowers` | Run checks before claiming work is done |
+| `systematic-debugging` | `obra/superpowers` | Find root causes instead of guessing fixes |
+
+To add or remove a skill, edit the `skills` script in `package.json`. Next.js guidance isn't on the list because Next.js 16.3+ ships it through its bundled docs and the agent rules `next dev` generates. Skills run with your agent's permissions, so review a skill's source before adding it.
 
 ## Turbopack
 

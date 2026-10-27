@@ -52,3 +52,9 @@ node_modules/
 .cursor/rules/*
 .windsurf/rules/*
 .kiro/steering/*
+
+# Agent skills (installed by `bun run skills`)
+.agents/skills/
+.claude/skills/
+.windsurf/skills/
+skills-lock.json
