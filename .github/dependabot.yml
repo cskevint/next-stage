@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "bun"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    ignore:
+      # typescript stays on 6.x for markuplint's JSX parser; TS 7 is installed as typescript-7
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
