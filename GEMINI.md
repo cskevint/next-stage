@@ -49,7 +49,7 @@ This is a modern Next.js 16.3.6 starter template designed for AI-driven developm
 - **Package Manager**: Bun 1.3.14
 - **Framework**: Next.js 16.3.6 with App Router
 - **Runtime**: React 19.2.8, React DOM 19.2.8
-- **Language**: TypeScript 5.9.3 with strict mode
+- **Language**: TypeScript 7.0.2 with strict mode (type-checking via `bun run typecheck`; TypeScript 6.0.3 kept as `typescript` for tooling that needs the JS API)
 - **API**: Hono 4.13.0 with @hono/zod-validator 0.7.6
 - **UI**: shadcn/ui with Radix UI primitives
 - **Styling**: Tailwind CSS v4.3.3

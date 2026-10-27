@@ -12,7 +12,7 @@
     "lint:markup": "markuplint \"./src/**/*.{jsx,tsx}\"",
     "lint:biome": "biome lint .",
     "format": "biome format . --write",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "node node_modules/typescript-7/bin/tsc --noEmit",
     "test:unit": "bun test \"**/*.test.ts\"",
     "test:e2e": "bun playwright test",
     "test:e2e:ui": "bun playwright test --ui",
@@ -53,7 +53,8 @@
     "@types/react-dom": "19.2.4",
     "markuplint": "^4.18.3",
     "tailwindcss": "^4.3.3",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3",
+    "typescript-7": "npm:typescript@^7.0.2"
   },
   "overrides": {
     "brace-expansion": "^5.0.9",

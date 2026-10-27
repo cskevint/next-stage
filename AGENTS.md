@@ -5,7 +5,7 @@
 **Key Technologies:**
 - Framework: Next.js 16.3.6 with App Router
 - Runtime: React 19.2.8, React DOM 19.2.8
-- Language: TypeScript 5.9.3
+- Language: TypeScript 7.0.2 (type-checking; TypeScript 6.0.3 kept as `typescript` for tooling that needs the JS API)
 - Package Manager: Bun 1.3.14
 - API Framework: Hono 4.13.0
 - API Validation: @hono/zod-validator 0.7.6
