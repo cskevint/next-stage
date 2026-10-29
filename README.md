@@ -17,7 +17,7 @@ A modern, type-safe Next.js starter template designed for AI-driven development.
 - **Icons**: lucide-react 1.28.0
 - **Linting & Formatting**: Biome 2.3.8, Markuplint 4.18.3
 - **Testing**: Playwright 1.61.1, Bun test runner
-- **Supply Chain Security**: Bun Security Scanner 1.1.2, Minimum Release Age
+- **Supply Chain Security**: Minimum Release Age
 
 ## Getting Started
 Before you start, make sure you have the following installed:
@@ -91,10 +91,6 @@ You can start editing the page by modifying `src/app/page.tsx`. The page auto-up
 
 This project implements supply chain attack protection using Bun's built-in security features.
 
-### Security Scanner
-
-Bun supports configurable [security scanners](https://bun.sh/docs/runtime/bunfig#install-security-scanner) that scan packages for vulnerabilities before installation. This project deliberately does **not** configure one. Dependabot runs installs behind a proxy that blocks hosts outside its allowlist, so a scanner such as [@socketsecurity/bun-security-scanner](https://github.com/SocketDev/bun-security-scanner) gets a 403 from its API and Bun aborts the install, failing every Dependabot update.
-
 ### Minimum Release Age
 
 To protect against newly published malicious packages, this project enforces a minimum release age requirement:
@@ -132,7 +128,7 @@ minimumReleaseAgeExcludes = [
 ]
 ```
 
-For more details, see [Bun's bunfig.toml documentation](https://bun.sh/docs/runtime/bunfig#install-security-scanner).
+For more details, see [Bun's bunfig.toml documentation](https://bun.sh/docs/runtime/bunfig).
 
 ## Code Quality with Biome and Markuplint
 
