@@ -27,7 +27,7 @@
     "upgradeps": "bunx upgradeps"
   },
   "dependencies": {
-    "@hono/zod-validator": "^0.7.6",
+    "@hono/zod-validator": "^0.9.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "hono": "^4.13.14",
