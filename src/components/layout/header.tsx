@@ -1,6 +1,8 @@
 import Link from "next/link";
+
 import { GitHubIcon } from "@/components/ui/icons";
 import { siteInfo } from "@/config/site";
+
 import { NavLinks } from "./nav-links";
 
 export function Header() {

@@ -4,7 +4,7 @@ This command performs comprehensive code quality checks. Use it before commits o
 
 ## What It Does
 
-1. **Code Quality Check**: Linting and formatting validation with Biome
+1. **Code Quality Check**: Linting and formatting validation with Oxlint and Oxfmt
 2. **Type Checking**: TypeScript type error detection
 3. **Unit Testing**: Execute unit tests with Bun test runner
 4. **E2E Testing**: Run integration tests with Playwright (optional)
@@ -25,14 +25,14 @@ bun run test:unit
 ```
 
 Note: `bun run check` now includes:
-- Biome linting and formatting
+- Oxlint linting and Oxfmt formatting
 - Markuplint validation
 - TypeScript type checking (`tsc --noEmit`)
 
 ## Check Items
 
 ### ✅ Code Quality
-- Syntax validation with Biome
+- Syntax validation with Oxlint and Oxfmt
 - Code formatting verification
 - Unused import detection
 - Naming convention adherence

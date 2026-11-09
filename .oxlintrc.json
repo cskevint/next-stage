@@ -1,0 +1,73 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["eslint", "typescript", "unicorn", "oxc", "import", "react", "jsx-a11y", "nextjs"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "perf": "error"
+  },
+  "rules": {
+    "no-unused-vars": "error",
+    "no-console": [
+      "warn",
+      {
+        "allow": ["log"]
+      }
+    ],
+    "no-param-reassign": "error",
+    "prefer-as-const": "error",
+    "default-param-last": "error",
+    "prefer-enum-initializers": "error",
+    "no-inferrable-types": "error",
+    "array-type": [
+      "error",
+      {
+        "default": "array-simple"
+      }
+    ],
+    "no-unnecessary-template-expression": "error",
+    "no-else-return": "error",
+    "prefer-number-properties": "error",
+    "self-closing-comp": "error",
+    "one-var": ["error", "never"],
+    "alt-text": "error",
+    "anchor-has-content": "error",
+    "anchor-is-valid": "error",
+    "aria-activedescendant-has-tabindex": "error",
+    "aria-props": "error",
+    "aria-proptypes": "error",
+    "aria-role": "error",
+    "aria-unsupported-elements": "error",
+    "autocomplete-valid": "error",
+    "click-events-have-key-events": "error",
+    "heading-has-content": "error",
+    "html-has-lang": "error",
+    "iframe-has-title": "error",
+    "img-redundant-alt": "error",
+    "interactive-supports-focus": "error",
+    "label-has-associated-control": "error",
+    "media-has-caption": "error",
+    "mouse-events-have-key-events": "error",
+    "no-access-key": "error",
+    "no-autofocus": "error",
+    "no-distracting-elements": "error",
+    "no-redundant-roles": "error",
+    "role-has-required-aria-props": "error",
+    "role-supports-aria-props": "error",
+    "scope": "error",
+    "tabindex-no-positive": "error",
+    "react-in-jsx-scope": "off",
+    "no-await-in-loop": "off",
+    "no-unassigned-import": "off"
+  },
+  "ignorePatterns": [
+    "**/node_modules",
+    "**/.next",
+    "**/dist",
+    "**/build",
+    "**/public",
+    "**/.vercel",
+    "**/coverage",
+    "**/*.min.js"
+  ]
+}

@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+
 import { styles } from "@/app/_styles/index";
 
 interface FeatureCardProps {

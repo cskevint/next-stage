@@ -1,6 +1,7 @@
 import { existsSync } from "node:fs";
 import { mkdir } from "node:fs/promises";
 import path from "node:path";
+
 import { globSync } from "glob";
 
 // Get editor from command line arguments
@@ -22,7 +23,7 @@ function removeFrontmatter(content: string): string {
 async function ensureDirectoryExists(targetDir: string): Promise<void> {
   if (!existsSync(targetDir)) {
     await mkdir(targetDir, { recursive: true });
-    // biome-ignore: create-directory
+    // oxlint-disable-next-line -- create-directory
     console.log(`Created directory ${targetDir}`);
   }
 }
@@ -43,7 +44,7 @@ async function readAndProcessRules(): Promise<{
     const contentWithoutFrontmatter = removeFrontmatter(content);
 
     if (!contentWithoutFrontmatter.trim()) {
-      // biome-ignore: Skipping files with no content
+      // oxlint-disable-next-line -- Skipping files with no content
       console.log(`Skipping ${file} as it has no content besides frontmatter`);
       continue;
     }
@@ -69,7 +70,7 @@ async function copyRules() {
   const processor = editorProcessors[editor as keyof typeof editorProcessors];
 
   if (!processor) {
-    // biome-ignore lint/suspicious/noConsole: <invalid editor>
+    // oxlint-disable-next-line no-console -- <invalid editor>
     console.error(
       `Unsupported editor: ${editor}. Supported editors: ${Object.keys(editorProcessors).join(", ")}`
     );
@@ -100,7 +101,7 @@ async function processCursorRules() {
 
     const targetPath = `${targetDir}/${newFileName}${fileExtension}`;
     await Bun.write(targetPath, content);
-    // biome-ignore: Copying files
+    // oxlint-disable-next-line -- Copying files
     console.log(`Copied ${file} to ${targetPath}`);
   }
 }
@@ -142,7 +143,7 @@ async function processWindsurfRules() {
 
     const targetPath = `${targetDir}/${fileName}.md`;
     await Bun.write(targetPath, newContent);
-    // biome-ignore: Copying files
+    // oxlint-disable-next-line -- Copying files
     console.log(`Copied ${file} to ${targetPath} with trigger: ${trigger}`);
   }
 }
@@ -158,7 +159,7 @@ async function processCopilotRules() {
   const targetPath = `${targetDir}/copilot-instructions.md`;
 
   await Bun.write(targetPath, mergedContent);
-  // biome-ignore: Copying files
+  // oxlint-disable-next-line -- Copying files
   console.log(`Merged rule files and saved to ${targetPath}`);
 }
 
@@ -226,7 +227,7 @@ async function processKiroRules() {
 
     const targetPath = `${targetDir}/${fileName}.md`;
     await Bun.write(targetPath, newContent);
-    // biome-ignore: Copying files
+    // oxlint-disable-next-line -- Copying files
     console.log(`Copied ${file} to ${targetPath} with inclusion: ${inclusion}`);
   }
 }

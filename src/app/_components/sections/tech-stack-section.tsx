@@ -1,5 +1,6 @@
 import { ExternalLink, FileCode } from "lucide-react";
 import Link from "next/link";
+
 import { TechListItem } from "@/app/_components/sections/tech-list-item";
 import { styles } from "@/app/_styles/index";
 
@@ -13,7 +14,7 @@ export function TechStackSection() {
     { label: "Zod", href: "https://zod.dev" },
     { label: "React Hook Form", href: "https://react-hook-form.com/" },
     { label: "Markuplint", href: "https://markuplint.dev/" },
-    { label: "Biome", href: "https://biomejs.dev/" },
+    { label: "Oxc", href: "https://oxc.rs/" },
   ] as const;
   return (
     <div className={styles.cards.section}>
@@ -63,7 +64,7 @@ export function TechStackSection() {
               <TechListItem text="Bun package manager" />
             </li>
             <li className="flex items-center gap-2">
-              <TechListItem text="Biome for linting and formatting" />
+              <TechListItem text="Oxlint + Oxfmt for linting and formatting" />
             </li>
             <li className="flex items-center gap-2">
               <TechListItem text="Markuplint for linting HTML" />

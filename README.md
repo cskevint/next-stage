@@ -7,7 +7,7 @@ A modern, type-safe Next.js starter template designed for AI-driven development.
 - **Package Manager**: Bun 1.3.14
 - **Framework**: Next.js 16.3.6 with App Router
 - **Runtime**: React 19.2.8, React DOM 19.2.8
-- **Language**: TypeScript 7.0.2 (type-checking; TypeScript 6.0.3 kept as `typescript` for tooling that needs the JS API)
+- **Language**: TypeScript 7.0.2 (type-checking via the `typescript-7` alias; Markuplint's JSX parser brings its own TypeScript 6)
 - **API Framework**: Hono 4.13.0
 - **API Validation**: @hono/zod-validator 0.7.6
 - **UI Components**: shadcn/ui
@@ -15,7 +15,7 @@ A modern, type-safe Next.js starter template designed for AI-driven development.
 - **Form Management**: React Hook Form 7.84.0
 - **Form Validation**: Zod 4.4.3
 - **Icons**: lucide-react 1.28.0
-- **Linting & Formatting**: Biome 2.3.8, Markuplint 4.18.3
+- **Linting & Formatting**: Oxlint 1.92.0, Oxfmt 0.77.0, Markuplint 4.18.3
 - **Testing**: Playwright 1.61.1, Bun test runner
 - **Supply Chain Security**: Minimum Release Age
 
@@ -120,7 +120,8 @@ minimumReleaseAgeExcludes = [
   "@types/react-dom",
   "tailwindcss",
   "@tailwindcss/postcss",
-  "@biomejs/biome",
+  "oxlint",
+  "oxfmt",
   "hono",
   "@hono/zod-validator",
   "zod",
@@ -130,9 +131,9 @@ minimumReleaseAgeExcludes = [
 
 For more details, see [Bun's bunfig.toml documentation](https://bun.sh/docs/runtime/bunfig).
 
-## Code Quality with Biome and Markuplint
+## Code Quality with Oxlint, Oxfmt and Markuplint
 
-This project uses [Biome](https://biomejs.dev/) for linting and formatting JavaScript/TypeScript code. Biome is a fast, modern JavaScript/TypeScript toolchain that replaces ESLint and Prettier.
+This project uses [Oxlint](https://oxc.rs/docs/guide/usage/linter) for linting and [Oxfmt](https://oxc.rs/docs/guide/usage/formatter) for formatting JavaScript/TypeScript, CSS and JSON. Both are part of the Oxc toolchain and are fast, modern replacements for ESLint and Prettier.
 
 Additionally, [Markuplint](https://markuplint.dev/) is used for linting JSX/TSX markup to ensure high-quality, accessible, and consistent UI components.
 
@@ -145,7 +146,7 @@ bun run dev
 # Run production build
 bun run build
 
-# Run all linters (Markuplint and Biome)
+# Run all linters (Markuplint and Oxlint)
 bun run lint
 
 # Run both linting and formatting with auto-fixes
@@ -299,7 +300,7 @@ For more information about the tech stack powering this template, refer to these
 - [Tailwind CSS](https://tailwindcss.com/) - a utility-first CSS framework for rapidly building custom designs.
 - [React Hook Form](https://react-hook-form.com/) - performant, flexible, and extensible forms with easy-to-use validation.
 - [Zod](https://zod.dev/) - TypeScript-first schema declaration and validation library.
-- [Biome](https://biomejs.dev/) - a fast, modern JavaScript/TypeScript toolchain that replaces ESLint and Prettier.
+- [Oxc](https://oxc.rs/) - Oxlint and Oxfmt, a fast, modern JavaScript/TypeScript toolchain that replaces ESLint and Prettier.
 - [Markuplint](https://markuplint.dev/) - a linter for HTML, JSX, and other markup languages to ensure high-quality, accessible UI components.
 - [Playwright](https://playwright.dev/) - a browser automation tool for testing and debugging.
 

@@ -13,9 +13,9 @@ bun start        # Start production server
 
 ### Code Quality
 ```bash
-bun run lint     # Run all linters (Markuplint + Biome)
-bun run check    # Run Biome check with auto-fixes + Markuplint
-bun run format   # Format code with Biome
+bun run lint     # Run all linters (Markuplint + Oxlint)
+bun run check    # Run Oxlint fixes + Oxfmt + Markuplint
+bun run format   # Format code with Oxfmt
 ```
 
 ### Testing
@@ -55,7 +55,7 @@ This is a modern Next.js 16.3.6 starter template designed for AI-driven developm
 - **Styling**: Tailwind CSS v4.3.3
 - **Forms**: React Hook Form 7.84.0 + Zod 4.4.3 validation
 - **Icons**: lucide-react 1.28.0
-- **Quality**: Biome 2.3.8 (linting/formatting) + Markuplint 4.18.3
+- **Quality**: Oxlint 1.92.0 + Oxfmt 0.77.0 (linting/formatting) + Markuplint 4.18.3
 - **Testing**: Playwright 1.61.1 + Bun test runner
 
 ### Key Architectural Patterns
@@ -106,7 +106,7 @@ src/
 - **Naming**: Lowercase with dashes for directories, descriptive names with auxiliary verbs
 - **Functions**: Use `function` keyword for pure functions
 - **Components**: Functional components only, no classes
-- **Formatting**: Biome with 2-space indentation, double quotes, 100-char line width
+- **Formatting**: Oxfmt with 2-space indentation, double quotes, 100-char line width
 - **File Structure**: Export → subcomponents → helpers → static content → types
 
 ### Performance Guidelines

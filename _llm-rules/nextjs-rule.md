@@ -9,7 +9,7 @@ alwaysApply: true
 ## Technology Stack
 - **Package Manager**: Bun 1.3.14
 - **Framework**: Next.js 16.3.6 with App Router
-- **Language**: TypeScript 7.0.2 (type-checking; TypeScript 6.0.3 kept as `typescript` for tooling that needs the JS API)
+- **Language**: TypeScript 7.0.2 (type-checking via the `typescript-7` alias; Markuplint's JSX parser brings its own TypeScript 6)
 - **Runtime**: React 19.2.8, React DOM 19.2.8
 - **UI Components**: shadcn/ui with Radix UI
 - **Styling**: Tailwind CSS 4.3.3
@@ -19,7 +19,7 @@ alwaysApply: true
 - **Form Validation**: Zod 4.4.3
 - **Styling Utilities**: class-variance-authority 0.7.1, clsx 2.1.1, tailwind-merge 3.6.0
 - **Theming**: next-themes 0.4.6
-- **Linting & Formatting**: Biome 2.3.8, markuplint 4.18.3
+- **Linting & Formatting**: Oxlint 1.92.0, Oxfmt 0.77.0, markuplint 4.18.3
 - **Testing**: Playwright 1.61.1, Bun test runner
 - **Icons**: lucide-react 1.28.0
 
@@ -91,8 +91,8 @@ src
 - Use the "function" keyword for pure functions
 - Avoid unnecessary curly braces in conditionals; use concise syntax for simple statements
 - Use declarative JSX
-- Follow Biome formatting rules
-- Use double quotes for strings as configured in Biome
+- Follow Oxfmt formatting rules
+- Use double quotes for strings as configured in Oxfmt
 
 ## UI and Styling
 - Use Shadcn UI, Radix, and Tailwind for components and styling
@@ -150,4 +150,4 @@ src
   - Use only for Web API access in small components
   - Avoid for data fetching or state management
 - Follow Next.js docs for Data Fetching, Rendering, and Routing
-- Use Biome for consistent code formatting and linting
+- Use Oxlint and Oxfmt for consistent code linting and formatting
